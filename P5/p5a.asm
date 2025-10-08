@@ -6,8 +6,8 @@ section	.text
 	
 _start:                   
 			
-	mov al,'Z'
-	mov	[msg],al
+
+	mov	[msg],'Z'
 	mov edx, msg ;  	; edx = dirección de la cadena msg
 	call puts			; imprime cadena msg terminada en valor nulo (0)
 
