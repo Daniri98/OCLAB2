@@ -5,9 +5,7 @@ section	.text
 	global _start       ;referencia para inicio de programa
 	
 _start:                   
-			
-	mov	byte [msg],'Z'
-	mov edx, msg ;  	; edx = dirección de la cadena msg
+	mov edx, msg		; edx = dirección de la cadena msg
 	call puts			; imprime cadena msg terminada en valor nulo (0)
 
 	mov	eax, 1	    	; seleccionar llamada al sistema para fin de programa
@@ -15,4 +13,3 @@ _start:
 
 section	.data
 msg	db  'abcdefghijklmnopqrstuvwxyz0123456789',0xa,0 
-
