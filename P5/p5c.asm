@@ -6,6 +6,9 @@ section	.text
 	
 _start:                   
 	mov edx, msg		; edx = dirección de la cadena msg
+    mov esi, [edx+26]
+    mov al, '@'
+    move esi,al
 	call puts			; imprime cadena msg terminada en valor nulo (0)
 
 	mov	eax, 1	    	; seleccionar llamada al sistema para fin de programa
