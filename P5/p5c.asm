@@ -9,7 +9,7 @@ _start:
     mov esi, msg
     mov esi, 26
     mov al, '@'
-    move [esi],al
+    mov esi,al
     mov edx, msg        ; edx = dirección de la cadena msg
 	call puts			; imprime cadena msg terminada en valor nulo (0)
 
