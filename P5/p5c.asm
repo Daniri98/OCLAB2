@@ -6,7 +6,8 @@ section	.text
 	
 _start:                   
 			
-    mov esi, [msg+26]
+    mov esi, msg
+    add esi, 26
     mov al, '@'
     mov [esi],al        ; edx = dirección de la cadena msg
     mov edx,msg
