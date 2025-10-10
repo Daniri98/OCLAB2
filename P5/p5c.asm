@@ -6,10 +6,9 @@ section	.text
 	
 _start:                   
 			
-    mov esi, msg
-    add esi, 26
+    mov ebx, 26
     mov al, '@'
-    mov [esi],al        ; edx = dirección de la cadena msg
+    mov msg[ebx],al        ; edx = dirección de la cadena msg
     mov edx,msg
 	call puts			; imprime cadena msg terminada en valor nulo (0)
 
