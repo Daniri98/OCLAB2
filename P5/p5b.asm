@@ -5,6 +5,7 @@ section	.text
 	global _start       ;referencia para inicio de programa
 	
 _start:   
+
 	mov al,'X'
 	mov edx, msg		; edx = dirección de la cadena msg
 	add edx,23
