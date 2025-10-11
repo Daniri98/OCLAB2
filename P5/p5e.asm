@@ -7,7 +7,7 @@ section	.text
 _start:
     mov ebx,19
     mov esi,6      
-    mov byte msg[ebx+esi],'%'            
+    mov byte msg[ebx+esi],'Z'            
 	mov edx, msg		; edx = dirección de la cadena msg
 	call puts			; imprime cadena msg terminada en valor nulo (0)
 
