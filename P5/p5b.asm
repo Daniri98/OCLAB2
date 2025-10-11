@@ -8,8 +8,7 @@ _start:
 
 	mov al,'X'
 	mov ebx, msg		; edx = dirección de la cadena msg
-	add ebx,23
-	mov [ebx],al
+	mov [ebx+23],al
 	mov edx, msg
 			
 	call puts			; imprime cadena msg terminada en valor nulo (0)
