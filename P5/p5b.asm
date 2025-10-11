@@ -10,6 +10,7 @@ _start:
 	mov edx, msg		; edx = dirección de la cadena msg
 	add edx,23
 	mov [edx],al
+	mov edx, msg
 			
 	call puts			; imprime cadena msg terminada en valor nulo (0)
 
