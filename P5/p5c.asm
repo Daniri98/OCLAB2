@@ -13,6 +13,8 @@ _start:
 	call puts			; imprime cadena msg terminada en valor nulo (0)
 
 	mov	eax, 1	    	; seleccionar llamada al sistema para fin de programa
+	mov ebx,0			; establecimiento a 0 para que tenga una salida exitosa y no marque 
+						; como fallo por tener a ebx con un valor diferente
 	int	0x80        	; llamada al sistema - fin de programa
 
 section	.data
