@@ -23,7 +23,21 @@ _start:                     ;tell linker entry point
     mov al,[N]
     mul bl
     mov [N],ax
+    call pHex_w
+    mov al,10	; cambio de linea
+	call putchar
     inc word [N]
+    mov ax,[N]
+    call pHex_w
+    mov al,10	; cambio de linea
+	call putchar
+    mov ax,bx
+    mov cx, 0xFF
+    div cx
+    call pHex_w
+    mov al,10	; cambio de linea
+	call putchar
+    mov ax,dx
     call pHex_w
     mov al,10	; cambio de linea
 	call putchar
