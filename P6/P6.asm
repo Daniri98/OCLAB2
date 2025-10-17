@@ -20,25 +20,26 @@ _start:                     ;tell linker entry point
     call pHex_w
     mov al,10	; cambio de linea
 	call putchar
-    mov al,[N]
-    mul bl
-    mov [N],ax
-    call pHex_w
+    
+    mov al,[N]          ;mover el valor encontrado en el lugar de memoria de la etiqueta N a AL
+    mul bl              ;multiplicar AL por lo que se encuentra en BL
+    mov [N],ax          ;mover el resultado al lugar de memoria de la etiqueta N
+    call pHex_w         ;Desplegar el resultado
     mov al,10	; cambio de linea
 	call putchar
-    inc word [N]
-    mov ax,[N]
-    call pHex_w
+    inc word [N]       ;Incrementar en 1 el valor encontrado en el lugar de memoria de N
+    mov ax,[N]         ;Mover el valor incrementado a ax
+    call pHex_w        ;Despliegue del valor aumentado
     mov al,10	; cambio de linea
 	call putchar
-    mov ax,bx
-    mov cx, 0xFF
-    div cx
-    call pHex_w
+    mov ax,bx           ;mover el valor del registro bx a ax para poder dividirlo
+    mov cx, 0xFF        ;darle el valor de 0xFF al divisor
+    div cx              ; dividir ax con cx
+    call pHex_w         ; despliegue del cociente de la division
     mov al,10	; cambio de linea
 	call putchar
-    mov ax,dx
-    call pHex_w
+    mov ax,dx       ;mover el valor del residuo a ax 
+    call pHex_w     ;despliegue del valor del residuo
     mov al,10	; cambio de linea
 	call putchar
 
