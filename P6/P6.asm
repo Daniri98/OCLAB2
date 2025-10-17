@@ -46,13 +46,21 @@ _start:                     ;tell linker entry point
     call pHex_w         ;despliegue del valor del residuo
     mov al,10	; cambio de linea
 	call putchar
-    
+
     mov ax,[N]
     add ax,dx
     call pHex_w  
     mov [N],ax
     mov al,10	; cambio de linea
 	call putchar
+
+    dec word [N]
+    pushf
+    pop ax
+    call pHex_w 
+    mov al,10	; cambio de linea
+	call putchar
+
 
 	mov eax, 1	;system call number (sys_exit) -- fin del programa
 	int 0x80        ;call kernel
