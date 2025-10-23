@@ -12,13 +12,13 @@ _start:                     ;tell linker entry point
     mov al,10	; cambio de linea
 	call putchar
 
-    mov eax,esp           ;mover a donde esta apuntando el stack pointer a AX
-    call pHex_dw         ;Desplegar el valor inicial de sp
+    mov eax,esp           ;mover a donde esta apuntando el stack pointer a EAX
+    call pHex_dw         ;Desplegar el valor inicial de esp
     mov al,10	; cambio de linea
 	call putchar
 
     push bx              ; insertar los datos de 16 menos significativos de EBX
-    mov eax,esp            ; mover a donde esta apuntando SP a AX
+    mov eax,esp            ; mover a donde esta apuntando ESP a EAX
     call pHex_dw          ;Desplegar en donde estaba apuntando
     mov al,10	; cambio de linea
 	call putchar
@@ -61,14 +61,14 @@ _start:                     ;tell linker entry point
     mov al,10	; cambio de linea
 	call putchar
     
-    mov eax,esp           ;mover a donde esta apuntando el stack pointer a AX
-    call pHex_dw         ;Desplegar el valor inicial de sp
+    mov eax,esp           ;mover a donde esta apuntando el stack pointer a EAX
+    call pHex_dw         ;Desplegar el valor inicial de esp
     mov al,10	; cambio de linea
 	call putchar
     pop ax                  ;remover un dato de 16 bits de la pila
 
-    mov eax,esp           ;mover a donde esta apuntando el stack pointer a AX
-    call pHex_dw         ;Desplegar el valor final de sp
+    mov eax,esp           ;mover a donde esta apuntando el stack pointer a EAX
+    call pHex_dw         ;Desplegar el valor final de esp
     mov al,10	; cambio de linea
 	call putchar
 
