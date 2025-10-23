@@ -55,13 +55,27 @@ _start:                     ;tell linker entry point
 	call putchar
 
     dec word [N]
-    pushf
-    pop ax
-    call pHex_w 
+    pushfd
+    pop eax
+    call pHex_dw 
+    mov al,10	; cambio de linea
+	call putchar
+    
+    mov ax,sp           ;mover a donde esta apuntando el stack pointer a AX
+    call pHex_w         ;Desplegar el valor inicial de sp
+    mov al,10	; cambio de linea
+	call putchar
+    pop ax                  ;remover un dato de 16 bits de la pila
+    call pHex_w             ;Desplegar ese dato de 16 bits
+     mov al,10	; cambio de linea
+	call putchar
+    mov ax,sp           ;mover a donde esta apuntando el stack pointer a AX
+    call pHex_w         ;Desplegar el valor final de sp
     mov al,10	; cambio de linea
 	call putchar
 
-
+    xor ebx,ebx         ; establecimiento a 0 para que tenga una salida exitosa y no marque 
+						; como fallo por tener a ebx con un valor diferente
 	mov eax, 1	;system call number (sys_exit) -- fin del programa
 	int 0x80        ;call kernel
     section	.data
