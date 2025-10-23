@@ -66,9 +66,7 @@ _start:                     ;tell linker entry point
     mov al,10	; cambio de linea
 	call putchar
     pop ax                  ;remover un dato de 16 bits de la pila
-    call pHex_w             ;Desplegar ese dato de 16 bits
-     mov al,10	; cambio de linea
-	call putchar
+    
     mov ax,sp           ;mover a donde esta apuntando el stack pointer a AX
     call pHex_w         ;Desplegar el valor final de sp
     mov al,10	; cambio de linea
