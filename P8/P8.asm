@@ -50,12 +50,10 @@ mov cx,6
 inaster mov bx,cx
 aster  mov al,[risco] 
 call putchar
-sub cx,1
 loop aster
 mov al,10
 call putchar
 mov cx,bx
-sub cx,1
 loop inaster
 
 mov eax, 1 ;system call number (sys_exit) -- fin del programa
