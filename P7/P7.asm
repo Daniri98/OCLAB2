@@ -32,10 +32,8 @@ _start:                     ;tell linker entry point
     call pBin_dw
     mov al,10	; cambio de linea
 	call putchar
-    mov eax,0x00040021
+    mov eax,0x40042021
     xor esi,eax
-    mov eax,0x60002001
-    or esi,eax
     mov eax,esi
     call pBin_dw
     mov al,10	; cambio de linea
@@ -112,7 +110,18 @@ _start:                     ;tell linker entry point
     mov al,10	; cambio de linea
 	call putchar
 
+    mov eax,esi
+    call pBin_dw
+    mov al,10	; cambio de linea
+    call putchar
+    mov eax,esi  
+    mov ebx,esi 
+    shl eax,3
+    shl ebx,1
+    add eax,ebx
+    call pBin_dw
+    mov al,10	; cambio de linea
+    call putchar 
     
-
 	mov eax, 1	;system call number (sys_exit) -- fin del programa
 	int 0x80        ;call kernel
