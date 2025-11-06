@@ -4,7 +4,7 @@ N equ 10
 global _start
 
 section .data
-tamano db 'Defina el tamano de su vector',0xa,0
+tamano db 'Introdusca los valores del vector',0xa,0
 inval db 'Invalido favor introducir otro caracter',0xa,0
 section .bss
 vector resb N
@@ -41,7 +41,7 @@ ret
 
 introduvector:
 mov edx,ecx
-
+cc:
 captura  call getch
     cmp al,'0'
     JB invalido
@@ -53,7 +53,7 @@ captura  call getch
     mov edx,inval
     call puts
     pop edx
-    jmp captura
+    jmp cc
     caminata:
    loop captura
    mov ecx,edx
