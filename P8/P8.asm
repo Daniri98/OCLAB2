@@ -56,12 +56,36 @@ call putchar
 mov cx,bx
 loop inaster
 
+mov cx,10
+mov edx,Arreglo
+captura call getch
+mov  [edx+ecx-1],al
+loop captura
+
+mov edx,orden
+mov al,10
+call putchar
+call puts 
+
+
+mov cx,10
+mov edx,Arreglo
+despli mov  Al,[edx+ecx-1]
+call  putchar
+mov al,10
+call putchar
+loop despli
+
 mov eax, 1 ;system call number (sys_exit) -- fin del programa
 int 0x80        ;call kernel
 
 section .data
-msg db 'Menor_que_m',0xa,0
-fdr db 'Fuera_de_rango',0xa,0
-N db 'Es_un_numero',0xa,0
-L db 'Es_una_letra',0xa,0
+msg db 'Menor que m',0xa,0
+fdr db 'Fuera de rango',0xa,0
+N db 'Es un numero',0xa,0
+L db 'Es una letra',0xa,0
+orden db 'Datos capturados',0xa,0
 risco db '*'
+
+section .bss
+Arreglo resb 10
