@@ -7,7 +7,7 @@ section .data
 tamano db 'Defina el tamano de su vector',0xa,0
 inval db 'Invalido favor introducir otro caracter',0xa,0
 section .bss
-xdd resb N
+vector resb N
 
 section .text
 _start:
@@ -25,6 +25,7 @@ int 0x80
 Desplvector:
     mov edx,ecx
     continuo mov eax,[ebx+ecx-1]
+    sub eax,030h
     call pHex_b
     call CambioLinea
     loop continuo
@@ -40,15 +41,20 @@ ret
 
 introduvector:
 mov edx,ecx
+
 captura  call getch
-    cmp '0'
-    JB
-    cmp'9'
+    cmp al,'0'
+    JB invalido
+    cmp al,'9'
     JA invalido
-    mov byte
-    push edx
-    invalido mov edx,inval
+    mov byte[ebx+ecx-1],al
+    jmp caminata
+    invalido    push edx
+    mov edx,inval
     call puts
     pop edx
-    loop captura
+    jmp captura
+    caminata:
+   loop captura
+   mov ecx,edx
 ret
