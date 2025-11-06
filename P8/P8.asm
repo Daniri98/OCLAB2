@@ -76,6 +76,8 @@ mov al,10
 call putchar
 loop despli
 
+xor ebx,ebx
+
 mov eax, 1 ;system call number (sys_exit) -- fin del programa
 int 0x80        ;call kernel
 
