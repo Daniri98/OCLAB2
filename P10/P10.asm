@@ -19,11 +19,11 @@ push esi
 mov ecx,20
 mov eax,0
 contar:
-mov byte bl,[ebp+esi]
+mov byte bl,ebp[20+esi]
 cmp bl,0
 JE No
 inc eax
-inc esi
+dec esi
 loop contar
 No:
 pop esi
