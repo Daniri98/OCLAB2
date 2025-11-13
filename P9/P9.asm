@@ -141,5 +141,21 @@ ProductoEscalarVector:
     pop ebx
     pop ecx
     call CambioLinea
-    call Desplvector
+    call Escalar
+    call CambioLinea
+    
+ret
+
+Escalar:
+    push ecx
+    push ebx
+    push esi
+    sum:
+    add al,ebx[esi]
+    inc esi
+    loop sum
+    call pHex_b
+    pop esi
+    pop ebx
+    pop ecx
 ret
