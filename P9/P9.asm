@@ -29,8 +29,8 @@ mov ebx,vector2
 call introduvector
 mov ebx,vector
 mov edx,vector2
-call SumaVector
 call ProductoEscalarVector
+call SumaVector
 
 
 fin:
