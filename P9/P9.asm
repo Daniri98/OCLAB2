@@ -29,8 +29,8 @@ mov ebx,vector2
 call introduvector
 mov ebx,vector
 mov edx,vector2
-call SumaVector
 call ProductoEscalarVector
+call SumaVector
 
 
 fin:
@@ -132,30 +132,16 @@ ProductoEscalarVector:
     multiplicar:
     mov byte al,edx[esi]
     mul byte ebx[esi]
-    mov byte ebx[esi],al
+    add edi,eax
     inc esi
     loop multiplicar
+    mov eax,edi
+    call pHex_b
     pop eax
     pop esi
     pop edx
     pop ebx
     pop ecx
     call CambioLinea
-    call Escalar
-    call CambioLinea
     
-ret
-
-Escalar:
-    push ecx
-    push ebx
-    push esi
-    sum:
-    add al,ebx[esi]
-    inc esi
-    loop sum
-    call pHex_b
-    pop esi
-    pop ebx
-    pop ecx
 ret
