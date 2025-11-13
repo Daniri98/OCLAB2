@@ -13,13 +13,13 @@ vector2 resb N
 
 section .text
 _start:
-mov edx,tamano
-call puts
-call CambioLinea
 mov ecx,N
 call Checkeo
 cmp al,1
 JE fin
+mov edx,tamano
+call puts
+call CambioLinea
 mov ebx,vector
 call introduvector
 mov edx,tamano
