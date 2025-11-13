@@ -13,21 +13,19 @@ ret
 strlenn:
 push ebp
 mov ebp,esp
-push ecx
 push ebx
-push esi
-mov ecx,20
+push edx
 mov eax,0
+mov  edx,ebp[8]
 contar:
-mov byte bl,ebp[20+esi]
+mov byte bl,[edx]
 cmp bl,0
 JE No
 inc eax
-dec esi
-loop contar
+inc edx
+jmp contar
 No:
-pop esi
+pop edx
 pop ebx
-pop ecx
 pop ebp
 ret
