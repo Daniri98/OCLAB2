@@ -48,13 +48,12 @@ CambioLinea:
     pop eax
 ret
 InvertirStr:
-    push ebx
     push eax
     push ecx
+    push ebx
     mov ecx,1
     contar:
-    mov byte al,[ebx]
-    cmp al,0
+    cmp byte [ebx],0
     JE despinver
     inc ebx
     inc ecx
@@ -64,9 +63,9 @@ InvertirStr:
         dec ebx
         call putchar
     loop despinver
+    pop ebx
     pop ecx
     pop eax
-    pop ebx
 ret
 
 TestBit:
