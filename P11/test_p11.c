@@ -8,7 +8,7 @@ int main(){
     uint8_t x=12;
     uint16_t dx=24452;
     uint32_t sdx=412423;
-    uint64_t isdx=8423125723844123;
+    uint64_t isdx=842312572384412353;
 pBin8b(x);
 printf("\n");
 pBin16b(dx);
