@@ -10,5 +10,5 @@ int main(){
     printf("Introdusca el bit al que quiere acceder del (0 al 31) del numero %d\n",c);
     scanf("%d",&numbit);
     }while(numbit<0 || numbit>31);
-    printf("El bit en la posicion %d es %d del numero %d\n",numbit,getBit(c,numbit),c);
+    printf("El bit en la posicion %d del numero %d es %d\n",numbit,c,getBit(c,numbit));
 }
